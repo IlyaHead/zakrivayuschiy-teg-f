@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif, Inter;
-  font-weight: var(--main-text-weight);
+  font-variation-settings: var(--main-text-weight);
   padding: 6.375rem clamp(0rem, -7.75rem + 34.4444vw, 23.25rem);
   display: flex;
   flex-direction: column;
