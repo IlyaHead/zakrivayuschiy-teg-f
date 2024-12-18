@@ -9,3 +9,130 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0px #000;
+  scale: 1;
+  transition: 0.5s ease-in-out;
+}
+
+.button {
+  position: relative;
+}
+
+.button:after {
+  content: '';
+  position: absolute;
+  inset: 0px;
+  background-color: #fff;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  mix-blend-mode: difference;
+}
+
+.button:hover:after {
+  transform: scaleX(1);
+}
+
+.like-icon:focus {
+  box-shadow: none;
+}
+
+.like-icon:hover:after {
+  transform: scaleX(0);
+}
+
+.like-icon .heart {
+  transform-origin: center;
+}
+
+.like-icon:focus-visible {
+  border: 2px solid #000;
+  transition: 0.3s ease;
+}
+
+.dialog__button:focus {
+  box-shadow: none;
+}
+
+.dialog__button:hover:after {
+  transform: scaleX(0);
+}
+
+.like-icon .core {
+  fill: #fff;
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon:hover .core {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon .main-body {
+  fill: transparent;
+  transition: fill 0.3s;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--contour-color);
+  transition: fill 0.3s linear 0.5s;
+}
+
+.like-icon:active .core {
+  fill: var(--heart-main-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--heart-main-color);
+  transition: fill 0.3s linear 0.5s;
+}
+
+.like-icon.is-liked .core {
+  fill: var(--heart-main-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--heart-main-color);
+  transition: fill 0.3s linear 0.5s;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--heart-main-color);
+  transition: fill 0.3s linear 0.6s;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart 0.3s ease-in 0.1s 1 alternate;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s 1 alternate;
+}
+
+
+@keyframes heart {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.25);
+  }
+}
+
+@keyframes sparks {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

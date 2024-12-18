@@ -13,4 +13,271 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif, Inter;
+  font-weight: var(--main-text-weight);
+  padding: 6.375rem clamp(0rem, -7.75rem + 34.4444vw, 23.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 104px;
+  background-image: var(--bg-gradient);
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.dialog {
+  padding: 28px 29px;
+  max-inline-size: 353px;
+  font-weight: var(--main-text-weight);
+  font-family: var(--accent-font);
+}
+
+.dialog[open] {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 30px; 
+}
+
+.dialog::backdrop {
+  background-color: #000;
+  opacity: 0.75;
+}
+
+.dialog__content {
+  font-weight: var(--main-text-weight);
+  font-family: var(--accent-font);
+  line-height: 150%;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header {
+  background-color: #fff;
+  display: grid;
+  gap: 20px;
+  justify-items: center;
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+  padding: clamp(7.5rem, 7.3239rem + 0.7512vw, 8rem) clamp(0.875rem, -1.4688rem + 10vw, 7.53125rem);
+  outline: 2px solid #000;
+}
+
+.header__logo {
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  font-weight: var(--main-text-weight);
+}
+
+.header__description {
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+}
+
+.main {
+  display: grid;
+  gap: 50px;
+}
+
+.feed {
+  display: grid;
+  gap: 54px;
+}
+
+.card {
+  background-color: #fff;
+  outline: 2px solid #000;
+}
+
+.card__header {
+  display: grid;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.card__photo {
+  position: relative;
+}
+
+.image {
+  inline-size: 100%;
+  block-size: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  object-position: right;
+  border: 2px solid #000;
+}
+
+.image__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: #000;
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  text-shadow:
+    -1px 0 #fff, 
+    0 1px #fff, 
+    1px 0 #fff, 
+    0 -1px #fff;
+}
+
+@supports((text-stroke: 1px #fff) or (-webkit-text-stroke: 1px #fff)) {
+  .image__label {
+      -webkit-text-stroke: 1px #fff;
+      text-stroke: 1px #fff;
+      text-shadow: none;
+  }
+} 
+
+.brightness-filter {
+  filter: brightness(200%);
+}
+
+.hue-filter {
+  filter: hue-rotate(90deg);
+}
+
+.invert-filter {
+  filter: invert(75%);
+}
+
+.saturate-filter {
+  filter: saturate(30%);
+}
+
+.grayscale-filter {
+  filter: grayscale(50%);
+}
+
+.blur-filter {
+  filter: blur(5px);
+}
+
+.multiplied-filter {
+  filter: contrast(2000%) brightness(130%) sepia(40%) blur(2px) grayscale(10%);
+}
+
+.card__text-button-container {
+  display: grid;
+  gap: 25px;
+  padding: 25px;
+}
+
+.card__text-section {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  line-height: 118%;
+  font-size: 18px;
+}
+
+.card__button-section {
+  display: flex;
+  justify-content: end;
+  align-items: flex-end;
+  block-size: 38px;
+  /* gap: 6px; */
+}
+
+.button {
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid #000;
+}
+
+.like-icon {
+  appearance: none;
+  background-color: #fff;
+  border: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.button__text {
+  font-family: var(--accent-font);
+  line-height: 90%;
+  font-size: 14px;
+}
+
+.like-button {
+  inline-size: 130px;
+  block-size: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.floppy-icon {
+  width: 21px;
+}
+
+.floppy-button {
+  display: flex;
+  inline-size: 338px;
+  block-size: 55px;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.dialog__button {
+  inline-size: 100%;
+  padding: 9px 17px;
+  text-transform: uppercase;
+  border: 2px solid #000;
+}
+
+.dialog__save-icon {
+  width: 77px;
+}
+
+@media (width<=375px) {
+
+  .page {
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+  }
+
+  .header {
+    inline-size: 100%;
+  }
+
+  .main {
+    gap: 50px;
+  }
+
+  .feed {
+    gap: 48px;
+  }
+
+  .card {
+    outline: none;
+    border: 2px solid #000;
+  }
+
+  .card__header {
+    padding: 3px 10px;
+  }
+
+  .floppy-icon {
+    width: 28px;
+  }
+
+  .floppy-button {
+    flex-direction: column;
+    inline-size: 306px;
+    block-size: 80px;
+    justify-content: space-evenly;
+    align-items: center;
+  }
 }
