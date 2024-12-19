@@ -195,17 +195,13 @@
 }
 
 .like-icon {
+  padding: 0;
+  margin: 0;
   appearance: none;
   background-color: #fff;
   border: 2px solid transparent;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  width: 38px;
-}
-
-.like-icon svg {
-  scale: 1.75;
+  height: 38px;
+  width: 41px;
 }
 
 .button__text {
