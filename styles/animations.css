@@ -57,14 +57,6 @@
   transition: 0.3s ease;
 }
 
-.dialog__button:focus {
-  box-shadow: none;
-}
-
-.dialog__button:hover:after {
-  transform: scaleX(0);
-}
-
 .like-icon .core {
   fill: #fff;
   transition: fill 0.3s linear 0.03s;

@@ -14,7 +14,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-family: var(--main-font), sans-serif, Inter;
-  font-variation-settings: var(--main-text-weight);
+  font-variation-settings: 'wght' var(--main-text-weight);
   padding: 6.375rem clamp(0rem, -7.75rem + 34.4444vw, 23.25rem);
   display: flex;
   flex-direction: column;
@@ -95,6 +95,7 @@
   align-items: center;
   padding: 5px 10px;
   font-size: 18px;
+  font-variation-settings: 'wght' var(--card-header-weight);
 }
 
 .card__photo {
@@ -172,6 +173,9 @@
   display: flex;
   flex-direction: column;
   gap: 25px;
+}
+
+.text-section {
   line-height: 118%;
   font-size: 18px;
 }
@@ -181,7 +185,7 @@
   justify-content: end;
   align-items: flex-end;
   block-size: 38px;
-  /* gap: 6px; */
+  gap: 5px;
 }
 
 .button {
@@ -197,6 +201,11 @@
   display: flex;
   align-items: center;
   height: 100%;
+  width: 38px;
+}
+
+.like-icon svg {
+  scale: 1.75;
 }
 
 .button__text {
@@ -242,6 +251,14 @@
 }
 
 @media (width<=375px) {
+
+  .dialog {
+    padding: 30px 42px;
+  }
+
+  .image__label {
+    right: 11px;
+  }
 
   .page {
     padding-inline-start: 0;
